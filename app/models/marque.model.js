@@ -8,5 +8,5 @@ module.exports = (sequelize, Sequelize) => {
       }
     });
   
-    return Tutorial;
+    return Marque;
 };
