@@ -4,7 +4,7 @@ const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.title) {
+    if (!req.body.nom) {
       res.status(400).send({
         message: "Contenu vide"
       });
@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     }
   
     const marque = {
-      title: req.body.title,
+        nom: req.body.nom,
       description: req.body.description,
       published: req.body.published ? req.body.published : false
     };
@@ -30,8 +30,8 @@ exports.create = (req, res) => {
   };
 
   exports.findAll = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
+    const nom = req.query.nom;
+    var condition = nom ? { nom: { [Op.like]: `%${nom}%` } } : null;
   
     Marque.findAll({ where: condition })
       .then(data => {

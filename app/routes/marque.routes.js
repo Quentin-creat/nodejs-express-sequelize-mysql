@@ -12,4 +12,4 @@ module.exports = app => {
     router.delete("/:id", marques.delete);
   
     app.use('/api/marques', router);
-  };
+};

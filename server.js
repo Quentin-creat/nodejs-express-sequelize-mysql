@@ -25,6 +25,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello World." });
 });
 
+require("./app/routes/marque.routes")(app)
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
