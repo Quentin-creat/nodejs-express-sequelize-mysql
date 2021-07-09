@@ -92,3 +92,17 @@ exports.update = (req, res) => {
         });
       });
   };
+
+  exports.findOne = (req, res) => {
+    const id = req.params.id;
+  
+    Marque.findByPk(id)
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "La marque n'a pas pu être trouvée, id : " + id
+        });
+      });
+  };

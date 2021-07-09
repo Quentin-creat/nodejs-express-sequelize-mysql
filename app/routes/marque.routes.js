@@ -6,6 +6,8 @@ module.exports = app => {
     router.post("/", marques.create);
   
     router.get("/", marques.findAll);
+
+    router.get("/:id", marques.findOne);
   
     router.put("/:id", marques.update);
   
